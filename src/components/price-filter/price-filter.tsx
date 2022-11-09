@@ -1,9 +1,12 @@
 import React from 'react'
 
-import { PriceFilterActionTypes, PriceFilterState, PriceFilterTitle } from '../../types/priceFilter'
+import { PriceFilterActionTypes, PriceFilterState } from '../../types/priceFilter'
 
 import classes from './price-filter.module.scss'
 import PriceItem from './price-item'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const classNames = require('classnames')
 
 interface PriceI {
   text: string
@@ -27,8 +30,9 @@ const PriceFilter = ({ priceFilter, setPriceFilter }: PriceFilterProps) => {
     },
   ]
   const elements = priceFilters.map(({ name, text }) => {
-    let cl = classes['price-filter__item']
-    cl += priceFilter?.[text] ? ` ${classes['price-filter__item_checked']}` : ''
+    const cl = classNames([classes['price-filter__item']], {
+      [classes['price-filter__item_checked']]: priceFilter?.[text],
+    })
     return (
       <li className={cl} key={text}>
         <PriceItem text={text} name={name} onFilterClick={setPriceFilter} />
