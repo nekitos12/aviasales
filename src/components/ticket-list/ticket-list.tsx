@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { TicketType } from '../../types/tickets'
 
@@ -13,6 +13,7 @@ interface TicketListProps {
 }
 
 const TicketList = ({ tickets, currentPriceFilter, currentTransferFilter, isLoading }: TicketListProps) => {
+  const [countClickShowMore, setCountClick] = useState(1)
   if (!currentTransferFilter.join('')) {
     return <div className={classes['ticket-list__error']}>Рейсов, подходящих под заданные фильтры, не найдено</div>
   }
@@ -56,7 +57,7 @@ const TicketList = ({ tickets, currentPriceFilter, currentTransferFilter, isLoad
   const filteredTickets = getTicketList()
   const elements = Array.isArray(filteredTickets) ? (
     filteredTickets
-      .filter((_, index) => index < 5)
+      .filter((_, index) => index < 5 * countClickShowMore)
       .map((ticket, index) => {
         return (
           <li className={classes['ticket-list__item']} key={index}>
@@ -78,7 +79,14 @@ const TicketList = ({ tickets, currentPriceFilter, currentTransferFilter, isLoad
       )}
       <ul>{elements}</ul>
       {tickets && currentTransferFilter.join('') && !currentPriceFilter ? (
-        <button className={classes['show-more']}>Показать ещё 5 билетов</button>
+        <button
+          className={classes['show-more']}
+          onClick={() => {
+            setCountClick(countClickShowMore + 1)
+          }}
+        >
+          Показать ещё 5 билетов
+        </button>
       ) : null}
     </>
   )
