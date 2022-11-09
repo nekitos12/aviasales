@@ -38,7 +38,7 @@ const Ticket = ({ ticket }: TicketPropsType) => {
   return (
     <div className={classes.ticket}>
       <div className={classes.ticket__header}>
-        <div className={classes.ticket__price}>{`${ticket.price} р`}</div>
+        <div className={classes.ticket__price}>{`${ticket.price.toLocaleString('ru-RU')}р`}</div>
         <div className={classes.ticket__carrier}>{ticket.carrier}</div>
       </div>
       <div className={classes.ticket__main}>
