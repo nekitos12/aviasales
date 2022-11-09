@@ -5,6 +5,7 @@
   border-radius: 5px;
   height: 184px;
   padding: 20px;
+  position: relative;
   &__header {
     display: flex;
     align-items: center;
@@ -19,6 +20,9 @@
   }
   &__carrier {
     font-size: 28px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
   &__main {
     display: flex;

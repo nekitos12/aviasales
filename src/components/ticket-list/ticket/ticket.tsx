@@ -39,7 +39,9 @@ const Ticket = ({ ticket }: TicketPropsType) => {
     <div className={classes.ticket}>
       <div className={classes.ticket__header}>
         <div className={classes.ticket__price}>{`${ticket.price.toLocaleString('ru-RU')}р`}</div>
-        <div className={classes.ticket__carrier}>{ticket.carrier}</div>
+        <div className={classes.ticket__carrier}>
+          <img src={`http://pics.avs.io/110/36/${ticket.carrier}.png`} />
+        </div>
       </div>
       <div className={classes.ticket__main}>
         {[0, 1].map(tagRowIndex => {
