@@ -1,0 +1,28 @@
+.price-filter {
+  display: flex;
+  width: 100%;
+  &__item {
+    width: 100%;
+    outline: 1px solid #dfe5ec;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 15px;
+    min-width: 168px;
+    text-align: center;
+    position: relative;
+  }
+  &__item_checked {
+    background: #2196f3;
+    color: #ffffff;
+    outline: none;
+  }
+  &__item:hover {
+    cursor: pointer;
+  }
+  &__item:first-child {
+    border-radius: 15px 0 0 15px;
+  }
+  &__item:last-child {
+    border-radius: 0 15px 15px 0;
+  }
+}

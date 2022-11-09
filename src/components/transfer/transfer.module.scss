@@ -1,0 +1,15 @@
+.transfer {
+  padding: 20px 0 10px;
+  background: #ffffff;
+  height: 252px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  &__title {
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 12px;
+    font-size: 12px;
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,24 @@
+.transfer-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 13px;
+  line-height: 20px;
+  padding-left: 30px;
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 1px solid #9abbce;
+    border-radius: 2px;
+    margin-left: -30px;
+  }
+
+  &__input {
+    appearance: none;
+    position: absolute;
+  }
+  &__input:checked + &__checkbox {
+    background: url('../../../../img/transfer/check.svg') no-repeat 50% 50%;
+  }
+}

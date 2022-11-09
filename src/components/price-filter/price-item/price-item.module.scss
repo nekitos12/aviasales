@@ -1,0 +1,19 @@
+.price-item {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  &__input {
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+  &__checkbox {
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+}

@@ -1,0 +1,18 @@
+.tag {
+  flex-basis: 33%;
+  display: flex;
+  font-weight: 600;
+  flex-direction: column;
+  &__title {
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 18px;
+    color: #a0b0b9;
+  }
+  &__descr {
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}

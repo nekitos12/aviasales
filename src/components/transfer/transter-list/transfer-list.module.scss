@@ -1,0 +1,10 @@
+.transfer-list {
+  display: block;
+  &__item {
+    height: 40px;
+    padding: 0 20px;
+  }
+  &__item:hover {
+    background: #f1fcff;
+  }
+}
