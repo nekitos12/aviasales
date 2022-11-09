@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react'
 
+import Transfer from '../transfer'
+import TicketWrapper from '../ticket-wrapper'
+import { useTypedSelector } from '../../hooks/useTypedSelector'
+import { useActions } from '../../hooks/useActions'
+
 import classes from './app.module.scss'
-import Transfer from './components/transfer'
-import TicketWrapper from './components/ticket-wrapper'
-import { useTypedSelector } from './hooks/useTypedSelector'
-import { useActions } from './hooks/useActions'
 
 const App = (): JSX.Element => {
   const [searchId, getSearchId] = useState('')
