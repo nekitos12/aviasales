@@ -10,7 +10,7 @@ const checkCurrent = (checkedItem: string, obj: PriceFilterState): PriceFilterSt
   const a = { ...obj }
   for (const key in a) {
     if (key === checkedItem) {
-      a[checkedItem] = true
+      a[checkedItem] = !a[checkedItem]
     } else {
       a[key] = false
     }
