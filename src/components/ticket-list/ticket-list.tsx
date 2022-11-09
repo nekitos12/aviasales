@@ -55,15 +55,17 @@ const TicketList = ({ tickets, currentPriceFilter, currentTransferFilter, isLoad
   }
   const filteredTickets = getTicketList()
   const elements = Array.isArray(filteredTickets) ? (
-    filteredTickets.map((ticket, index) => {
-      return (
-        <li key={index}>
-          <Ticket ticket={ticket} />
-        </li>
-      )
-    })
+    filteredTickets
+      .filter((_, index) => index < 5)
+      .map((ticket, index) => {
+        return (
+          <li className={classes['ticket-list__item']} key={index}>
+            <Ticket ticket={ticket} />
+          </li>
+        )
+      })
   ) : (
-    <li>
+    <li className={classes['ticket-list__item']}>
       <Ticket ticket={filteredTickets} />
     </li>
   )
@@ -75,6 +77,9 @@ const TicketList = ({ tickets, currentPriceFilter, currentTransferFilter, isLoad
         <div>Получено {tickets ? [...tickets].length : '0'} билетов </div>
       )}
       <ul>{elements}</ul>
+      {tickets && currentTransferFilter.join('') && !currentPriceFilter ? (
+        <button className={classes['show-more']}>Показать ещё 5 билетов</button>
+      ) : null}
     </>
   )
 }

@@ -1,5 +1,6 @@
 .app {
   background: #f3f7fa;
+  min-height: 100vh;
   &__container {
     width: calc(100% - 206px);
     padding-top: 50px;

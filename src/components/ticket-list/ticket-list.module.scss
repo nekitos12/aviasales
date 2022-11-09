@@ -3,4 +3,18 @@
     font-size: 16px;
     margin: 10px auto;
   }
+  &__item + &__item {
+    padding-top: 20px;
+  }
+}
+
+.show-more {
+  padding: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-color: transparent;
+  width: 100%;
+  background: #2196F3;
+  border-radius: 5px;
+  cursor: pointer;
 }
