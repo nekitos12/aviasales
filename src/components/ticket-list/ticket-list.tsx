@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { TicketType } from '../../types/tickets'
 
@@ -14,6 +14,7 @@ interface TicketListProps {
 
 const TicketList = ({ tickets, currentPriceFilter, currentTransferFilter, isLoading }: TicketListProps) => {
   const [countClickShowMore, setCountClick] = useState(1)
+  useEffect(() => setCountClick(1), [currentPriceFilter, currentTransferFilter])
   if (!currentTransferFilter.join('')) {
     return <div className={classes['ticket-list__error']}>Рейсов, подходящих под заданные фильтры, не найдено</div>
   }
