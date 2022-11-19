@@ -7,7 +7,7 @@ import Ticket from './ticket'
 
 interface TicketListProps {
   tickets: TicketType[] | null
-  currentPriceFilter: string | undefined
+  currentPriceFilter: string | false
   currentTransferFilter: Array<string | null>
   isLoading: boolean
 }

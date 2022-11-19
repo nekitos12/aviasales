@@ -16,12 +16,7 @@ const TicketWrapper = ({ currentTransferFilter, isLoading }: TicketWrapperPropTy
   const { tickets } = useTypedSelector(state => state.ticketsData)
   const { setPriceFilter } = useActions()
   const { priceFilter } = useTypedSelector(state => state)
-  let currentPriceFilter
-  for (const key in priceFilter) {
-    if (priceFilter[key]) {
-      currentPriceFilter = key
-    }
-  }
+  const currentPriceFilter = Object.entries(priceFilter).filter(filter => filter[1])?.[0]?.[0]
   return (
     <div className={classes['ticket-wrapper']}>
       <PriceFilter priceFilter={priceFilter} setPriceFilter={setPriceFilter} />

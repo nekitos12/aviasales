@@ -39,6 +39,7 @@
     "quotes": ["error", "single"],
     "semi": "off",
     "@typescript-eslint/default-param-last": "off",
+    "@typescript-eslint/no-use-before-define": "off",
     "import/namespace": "off",
     "import/no-unresolved": [2, { "caseSensitive": false }],
     "react/jsx-filename-extension": [1, { "extensions": [ ".tsx"] }],

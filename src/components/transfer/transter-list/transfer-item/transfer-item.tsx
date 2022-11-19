@@ -6,26 +6,27 @@ import { TransferFilterActionTypes } from '../../../../types/transferFilter'
 import classes from './transfer-item.module.scss'
 
 type TransferItemPropsType = {
-  text: string
-  name: TransferFilterActionTypes
+  label: string
+  value: TransferFilterActionTypes
   filters: {
     [key: string]: boolean
   }
   id: string
 }
 
-const TransferItem = ({ text, name, filters, id }: TransferItemPropsType) => {
+const TransferItem = ({ label, value, filters, id }: TransferItemPropsType) => {
   const { setTransferFilter } = useActions()
   return (
     <label className={classes['transfer-item']}>
       <input
         type='checkbox'
+        value={value}
         checked={filters?.[id]}
-        onChange={() => setTransferFilter(name, id)}
+        onChange={() => setTransferFilter(value, id)}
         className={classes['transfer-item__input']}
       />
       <span className={classes['transfer-item__checkbox']}></span>
-      {text}
+      {label}
     </label>
   )
 }

@@ -24,7 +24,7 @@ const isEveryTrue = (obj: FilterState, b: string) => {
 
 export const setTransferFilter = (state: FilterState = initialState, action: TransferFilterAction) => {
   switch (action.type) {
-    case TransferFilterActionTypes.CHECK_FILTER:
+    case TransferFilterActionTypes.CHECK_ONE_FILTER:
       return {
         ...state,
         [action.payload]: !state[action.payload],

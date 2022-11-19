@@ -3,12 +3,12 @@ export interface FilterState {
 }
 
 export enum TransferFilterActionTypes {
-  CHECK_FILTER = 'CHECK_FILTER',
+  CHECK_ONE_FILTER = 'CHECK_ONE_FILTER',
   CHECK_ALL_FILTER = 'CHECK_ALL_FILTER',
 }
 
-interface CheckFilter {
-  type: TransferFilterActionTypes.CHECK_FILTER
+interface CheckOneFilter {
+  type: TransferFilterActionTypes.CHECK_ONE_FILTER
   payload: string
 }
 
@@ -17,4 +17,4 @@ interface CheckAllFilter {
   payload: string
 }
 
-export type TransferFilterAction = CheckFilter | CheckAllFilter
+export type TransferFilterAction = CheckOneFilter | CheckAllFilter

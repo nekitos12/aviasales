@@ -1,41 +1,39 @@
 import React from 'react'
+import cn from 'classnames'
 
 import { PriceFilterActionTypes, PriceFilterState } from '../../types/priceFilter'
 
 import classes from './price-filter.module.scss'
 import PriceItem from './price-item'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const classNames = require('classnames')
-
 interface PriceI {
-  text: string
-  name: PriceFilterActionTypes
+  label: string
+  value: PriceFilterActionTypes
 }
 interface PriceFilterProps {
   priceFilter: PriceFilterState
-  setPriceFilter: (name: PriceFilterActionTypes, text: string) => void
+  setPriceFilter: (value: PriceFilterActionTypes, label: string) => void
 }
 
 const PriceFilter = ({ priceFilter, setPriceFilter }: PriceFilterProps) => {
   const priceFilters: PriceI[] = [
     {
-      text: 'самый дешевый',
-      name: PriceFilterActionTypes.MOST_CHEAP,
+      label: 'самый дешевый',
+      value: PriceFilterActionTypes.MOST_CHEAP,
     },
-    { text: 'самый быстрый', name: PriceFilterActionTypes.MOST_QUICK },
+    { label: 'самый быстрый', value: PriceFilterActionTypes.MOST_QUICK },
     {
-      text: 'оптимальный',
-      name: PriceFilterActionTypes.OPTIMAL,
+      label: 'оптимальный',
+      value: PriceFilterActionTypes.OPTIMAL,
     },
   ]
-  const elements = priceFilters.map(({ name, text }) => {
-    const cl = classNames([classes['price-filter__item']], {
-      [classes['price-filter__item_checked']]: priceFilter?.[text],
+  const elements = priceFilters.map(({ value, label }) => {
+    const cl = cn([classes['price-filter__item']], {
+      [classes['price-filter__item_checked']]: priceFilter?.[label],
     })
     return (
-      <li className={cl} key={text}>
-        <PriceItem text={text} name={name} onFilterClick={setPriceFilter} />
+      <li className={cl} key={label}>
+        <PriceItem label={label} value={value} onFilterClick={setPriceFilter} />
       </li>
     )
   })
