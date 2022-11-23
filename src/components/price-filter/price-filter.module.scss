@@ -19,10 +19,13 @@
   &__item:hover {
     cursor: pointer;
   }
-  &__item:first-child {
+  &__item:first-child,
+  &__item:first-child input[type='checkbox']:focus-visible{
     border-radius: 15px 0 0 15px;
   }
-  &__item:last-child {
+
+  &__item:last-child,
+  &__item:last-child input[type='checkbox']:focus-visible{
     border-radius: 0 15px 15px 0;
   }
 }

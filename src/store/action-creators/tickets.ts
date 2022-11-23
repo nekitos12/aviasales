@@ -8,7 +8,6 @@ export const getTickets = (id: string) => {
     try {
       const { apiGetTickets } = useAsApi()
       const res = await apiGetTickets(id)
-      console.log(res)
       dispatch({ type: TicketActionTypes.FETCH_TICKETS_SUCCESS, payload: res.tickets })
     } catch (e) {
       dispatch({

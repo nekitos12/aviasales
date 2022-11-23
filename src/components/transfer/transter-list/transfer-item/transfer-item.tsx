@@ -21,11 +21,12 @@ const TransferItem = ({ label, value, filters, id }: TransferItemPropsType) => {
       <input
         type='checkbox'
         value={value}
+        tabIndex={-1}
         checked={filters?.[id]}
         onChange={() => setTransferFilter(value, id)}
         className={classes['transfer-item__input']}
       />
-      <span className={classes['transfer-item__checkbox']}></span>
+      <span tabIndex={1} className={classes['transfer-item__checkbox']}></span>
       {label}
     </label>
   )

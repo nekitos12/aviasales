@@ -27,7 +27,6 @@ const App = (): JSX.Element => {
     try {
       setFetchLoading(true)
       const res = await apiGetSearchId()
-      console.log(res)
       setSearchId(res.searchId)
       await getTickets(res.searchId)
     } catch (e) {

@@ -15,6 +15,7 @@ const PriceItem = ({ value, label, onFilterClick }: PriceItemPropsType) => {
     <label className={classes['price-item']}>
       <input
         type='checkbox'
+        tabIndex={2}
         name='price'
         value={value}
         onInput={() => onFilterClick(value, label)}

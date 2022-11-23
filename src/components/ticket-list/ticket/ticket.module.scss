@@ -6,6 +6,11 @@
   height: 184px;
   padding: 20px;
   position: relative;
+  display: block;
+  &:focus-visible {
+    outline: 3px solid #2196f3;
+    outline-offset: -3px;
+  }
   &__header {
     display: flex;
     align-items: center;
