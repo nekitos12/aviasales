@@ -24,8 +24,10 @@ ul {
   margin-block-end: 0;
   padding-inline-start: 0;
 }
+input[type='checkbox']{
+  margin: 0;
+}
 input[type='checkbox']:focus-visible {
   outline: none;
-  margin: 0;
-  border: 3px solid #2196f3;
+  outline-offset: 0;
 }

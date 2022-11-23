@@ -25,4 +25,10 @@
   &__input:checked + &__checkbox {
     background: url('../../../../img/transfer/check.svg') no-repeat 50% 50%;
   }
+
+  &__input:checked:focus-visible + &__checkbox {
+    background: url('../../../../img/transfer/check.svg') no-repeat 50% 50%;
+    outline: 3px solid #2196f3;
+    outline-offset: -3px;
+  }
 }
