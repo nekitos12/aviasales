@@ -11,7 +11,7 @@ import classes from './app.module.scss'
 
 const App = (): JSX.Element => {
   const [isLoading, setFetchLoading] = useState(true)
-  const { getSearchId } = useAsApi()
+  const { apiGetSearchId } = useAsApi()
   const { getTickets } = useActions()
   const { errorCount } = useTypedSelector(state => state.ticketsData)
   const { transferFilter } = useTypedSelector(state => state)
@@ -26,7 +26,8 @@ const App = (): JSX.Element => {
   async function getAuth() {
     try {
       setFetchLoading(true)
-      const res = await getSearchId()
+      const res = await apiGetSearchId()
+      console.log(res)
       setSearchId(res.searchId)
       await getTickets(res.searchId)
     } catch (e) {
