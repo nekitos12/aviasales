@@ -18,11 +18,12 @@ const PriceItem = ({ priceFilter, value, label, onFilterClick }: PriceItemPropsT
         type='radio'
         name='price'
         value={value}
+        tabIndex={2}
+        onClick={() => onFilterClick(value, label)}
         defaultChecked={priceFilter[label]}
         className={classes['price-item__input']}
       />
-      {/*<span className={classes['price-item__checkbox']}></span>*/}
-      {label}
+      <span className={classes['price-item__checkbox']}>{label}</span>
     </label>
   )
 }
