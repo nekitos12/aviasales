@@ -19,18 +19,18 @@
   &__item:hover {
     cursor: pointer;
   }
-  &__item input[type='checkbox']:focus-visible{
+  &__item:focus-visible input[type='radio']{
     outline-offset: 2px;
     border: 3px solid #2196f3;
   }
 
   &__item:first-child,
-  &__item:first-child input[type='checkbox']:focus-visible{
+  &__item:first-child:focus-visible input[type='radio']{
     border-radius: 15px 0 0 15px;
   }
 
   &__item:last-child,
-  &__item:last-child input[type='checkbox']:focus-visible{
+  &__item:last-child:focus-visible input[type='radio']{
     border-radius: 0 15px 15px 0;
   }
 }

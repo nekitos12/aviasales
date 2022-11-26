@@ -8,6 +8,7 @@ const initialState: PriceFilterState = {
 
 const checkCurrent = (checkedItem: string, obj: PriceFilterState): PriceFilterState => {
   const a = { ...obj }
+  console.log(a)
   for (const key in a) {
     if (key === checkedItem) {
       a[checkedItem] = !a[checkedItem]
@@ -15,6 +16,7 @@ const checkCurrent = (checkedItem: string, obj: PriceFilterState): PriceFilterSt
       a[key] = false
     }
   }
+  console.log(a)
   return a
 }
 

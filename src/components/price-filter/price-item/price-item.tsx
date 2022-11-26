@@ -1,27 +1,27 @@
 import React from 'react'
 
-import { PriceFilterActionTypes } from '../../../types/priceFilter'
+import { PriceFilterActionTypes, PriceFilterState } from '../../../types/priceFilter'
 
 import classes from './price-item.module.scss'
 
 type PriceItemPropsType = {
   label: string
   value: PriceFilterActionTypes
+  priceFilter: PriceFilterState
   onFilterClick: (value: PriceFilterActionTypes, label: string) => void
 }
 
-const PriceItem = ({ value, label, onFilterClick }: PriceItemPropsType) => {
+const PriceItem = ({ priceFilter, value, label, onFilterClick }: PriceItemPropsType) => {
   return (
     <label className={classes['price-item']}>
       <input
-        type='checkbox'
-        tabIndex={2}
+        type='radio'
         name='price'
         value={value}
-        onInput={() => onFilterClick(value, label)}
+        defaultChecked={priceFilter[label]}
         className={classes['price-item__input']}
       />
-      <span className={classes['price-item__checkbox']}></span>
+      {/*<span className={classes['price-item__checkbox']}></span>*/}
       {label}
     </label>
   )

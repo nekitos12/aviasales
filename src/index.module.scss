@@ -24,10 +24,10 @@ ul {
   margin-block-end: 0;
   padding-inline-start: 0;
 }
-input[type='checkbox']{
+input[type='checkbox'],input[type='radio']{
   margin: 0;
 }
-input[type='checkbox']:focus-visible {
+input[type='checkbox']:focus-visible, input[type='radio']:focus-visible {
   outline: none;
   outline-offset: 0;
 }

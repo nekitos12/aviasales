@@ -32,8 +32,8 @@ const PriceFilter = ({ priceFilter, setPriceFilter }: PriceFilterProps) => {
       [classes['price-filter__item_checked']]: priceFilter?.[label],
     })
     return (
-      <li className={cl} key={label}>
-        <PriceItem label={label} value={value} onFilterClick={setPriceFilter} />
+      <li tabIndex={2} className={cl} key={label} onClick={() => setPriceFilter(value, label)}>
+        <PriceItem priceFilter={priceFilter} label={label} value={value} onFilterClick={setPriceFilter} />
       </li>
     )
   })
